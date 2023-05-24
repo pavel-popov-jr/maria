@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>You are a diamond 💎</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <style>
+        html {
+            font-size: 16px;
+        }
+
+        html, body {
+            height: 100%;
+            background-color: #111;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #111;
+            font-family: Helvetica, Arial, sans-serif;
+            overflow: hidden;
+            max-width: 100%;
+            opacity: 0;
+            animation: .5s 1s fadeIn forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 100%;
+            }
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: calc(0.5rem + 0.35vw);
+            z-index: 10;
+        }
+
+        .slider__nav {
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .slider {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        .slider canvas {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            right: 0;
+            bottom: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        .slider__text {
+            position: absolute;
+            bottom: calc(2rem + 3vw);
+            left: calc(2rem + 3vw);
+            z-index: 10;
+            font-size: calc(1rem + 5vmax);
+            transform-origin: top;
+            line-height: 1.075;
+            font-family: "Pangolin", Helvetica, Arial, sans-serif;
+            color: hotpink;
+            text-shadow: 3px 5px 0 #32312e;
+            font-weight: 600;
+        }
+
+        @media (min-width: 1000px) {
+            .slider__text {
+                font-size: calc(1rem + 4vmax);
+            }
+        }
+
+        .slider__text-line {
+            overflow: hidden;
+        }
+
+        .slider__bg-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-image: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .4));
+        }
+
+        .slide {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        .slide__content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .slide__img {
+            position: relative;
+            width: 70vmin;
+            padding: 20px 20px 50px;
+            margin: 0;
+            transform-origin: top;
+            background: #fff;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: 0 5px 26px rgba(0, 0, 0, .25);
+        }
+
+        @media (min-width: 1000px) {
+            .slide__img {
+                width: 55vmin;
+            }
+        }
+
+        .slide__img::before {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+
+        .slide__img:first-child {
+            top: -1.5rem;
+            right: -1rem;
+        }
+
+        .slide__img:last-child {
+            bottom: -1.5rem;
+            left: -1rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider js-slider">
+    <div class="slider__inner js-slider__inner"></div>
+
+    <div class="slider__bg-overlay"></div>
+
+    <div class="slide js-slide">
+        <div class="slide__content">
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-1-photo-1-min.png')"></div>
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-1-photo-2-min.jpg')"></div>
+        </div>
+
+        <div class="slider__text js-slider__text">
+            <div class="slider__text-line js-slider__text-line">
+                <div>You are</div>
+            </div>
+            <div class="slider__text-line js-slider__text-line">
+                <div>crazy 🔥</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="slide js-slide">
+        <div class="slide__content">
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-6-photo-1-min.jpg')"></div>
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-6-photo-2-min.jpg')"></div>
+        </div>
+
+        <div class="slider__text js-slider__text">
+            <div class="slider__text-line js-slider__text-line">
+                <div>You are</div>
+            </div>
+            <div class="slider__text-line js-slider__text-line">
+                <div>cute 😛</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide js-slide">
+        <div class="slide__content">
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-3-photo-1-min.png')"></div>
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-3-photo-2-min.png')"></div>
+        </div>
+
+        <div class="slider__text js-slider__text">
+            <div class="slider__text-line js-slider__text-line">
+                <div>You are</div>
+            </div>
+            <div class="slider__text-line js-slider__text-line">
+                <div>brave 🦁</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide js-slide">
+        <div class="slide__content">
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-4-photo-1-min.png')"></div>
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-4-photo-2-min.jpg')"></div>
+        </div>
+
+        <div class="slider__text js-slider__text">
+            <div class="slider__text-line js-slider__text-line">
+                <div>You are</div>
+            </div>
+            <div class="slider__text-line js-slider__text-line">
+                <div>flexible 🤸‍♀️</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide js-slide">
+        <div class="slide__content">
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-5-photo-1-min.jpg')"></div>
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-5-photo-2-min.jpg')"></div>
+        </div>
+
+        <div class="slider__text js-slider__text">
+            <div class="slider__text-line js-slider__text-line">
+                <div>You are</div>
+            </div>
+            <div class="slider__text-line js-slider__text-line">
+                <div>funny 😅️</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide js-slide">
+        <div class="slide__content">
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-2-photo-1-min.jpg')"></div>
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-2-photo-2-min.jpg')"></div>
+        </div>
+        <div class="slider__text js-slider__text">
+            <div class="slider__text-line js-slider__text-line">
+                <div>You are</div>
+            </div>
+            <div class="slider__text-line js-slider__text-line">
+                <div>stylish 😎</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide js-slide">
+        <div class="slide__content">
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-7-photo-1-min.jpg')"></div>
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-7-photo-2-min.png')"></div>
+        </div>
+        <div class="slider__text js-slider__text">
+            <div class="slider__text-line js-slider__text-line">
+                <div>You are</div>
+            </div>
+            <div class="slider__text-line js-slider__text-line">
+                <div>professional 🦉</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide js-slide">
+        <div class="slide__content">
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-8-photo-1-min.jpg')"></div>
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-8-photo-2-min.jpg')"></div>
+        </div>
+        <div class="slider__text js-slider__text">
+            <div class="slider__text-line js-slider__text-line">
+                <div>You are</div>
+            </div>
+            <div class="slider__text-line js-slider__text-line">
+                <div>free 🇺🇦</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide js-slide">
+        <div class="slide__content">
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-9-photo-1-min.jpg')"></div>
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-9-photo-2-min.jpg')"></div>
+        </div>
+        <div class="slider__text js-slider__text">
+            <div class="slider__text-line js-slider__text-line">
+                <div>You are</div>
+            </div>
+            <div class="slider__text-line js-slider__text-line">
+                <div>romantic ❤️</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide js-slide">
+        <div class="slide__content">
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-10-photo-1-min.png')"></div>
+            <div class="slide__img js-slide__img" style="background-image: url('./pics/slide-10-photo-2-min.jpg')"></div>
+        </div>
+        <div class="slider__text js-slider__text">
+            <div class="slider__text-line js-slider__text-line">
+                <div>You are</div>
+            </div>
+            <div class="slider__text-line js-slider__text-line">
+                <div>beautiful 😍️</div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="slider__nav js-slider__nav">
+        <div class="slider-bullet js-slider-bullet">
+            <span class="slider-bullet__text js-slider-bullet__text">01</span>
+            <span class="slider-bullet__line js-slider-bullet__line"></span>
+        </div>
+        <div class="slider-bullet js-slider-bullet">
+            <span class="slider-bullet__text js-slider-bullet__text">02</span>
+            <span class="slider-bullet__line js-slider-bullet__line"></span>
+        </div>
+        <div class="slider-bullet js-slider-bullet">
+            <span class="slider-bullet__text js-slider-bullet__text">03</span>
+            <span class="slider-bullet__line js-slider-bullet__line"></span>
+        </div>
+        <div class="slider-bullet js-slider-bullet">
+            <span class="slider-bullet__text js-slider-bullet__text">04</span>
+            <span class="slider-bullet__line js-slider-bullet__line"></span>
+        </div>
+        <div class="slider-bullet js-slider-bullet">
+            <span class="slider-bullet__text js-slider-bullet__text">05</span>
+            <span class="slider-bullet__line js-slider-bullet__line"></span>
+        </div>
+        <div class="slider-bullet js-slider-bullet">
+            <span class="slider-bullet__text js-slider-bullet__text">06</span>
+            <span class="slider-bullet__line js-slider-bullet__line"></span>
+        </div>
+        <div class="slider-bullet js-slider-bullet">
+            <span class="slider-bullet__text js-slider-bullet__text">07</span>
+            <span class="slider-bullet__line js-slider-bullet__line"></span>
+        </div>
+        <div class="slider-bullet js-slider-bullet">
+            <span class="slider-bullet__text js-slider-bullet__text">08</span>
+            <span class="slider-bullet__line js-slider-bullet__line"></span>
+        </div>
+        <div class="slider-bullet js-slider-bullet">
+            <span class="slider-bullet__text js-slider-bullet__text">09</span>
+            <span class="slider-bullet__line js-slider-bullet__line"></span>
+        </div>
+        <div class="slider-bullet js-slider-bullet">
+            <span class="slider-bullet__text js-slider-bullet__text">10</span>
+            <span class="slider-bullet__line js-slider-bullet__line"></span>
+        </div>
+    </nav>
+
+    <div class="scroll js-scroll">Scroll</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+<script async src="./script.js"></script>
+
+</body>
+</html>
